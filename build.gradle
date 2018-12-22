@@ -1,0 +1,80 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "https://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+
+version = "0.1"
+group = "wormz.fatweaks" 
+archivesBaseName = "FATweaks"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+repositories {
+    maven {
+        name = "jei"
+        url = "http://dvs1.progwml6.com/files/maven"
+    }
+    maven {
+        name = "ic2"
+        url = "http://maven.ic2.player.to"
+    }
+    maven {
+        name = "jared"
+        url = "http://maven.blamejared.com"
+    }
+}
+
+minecraft {
+    version = "1.12.2-14.23.5.2796"
+    runDir = "run"
+    mappings = "stable_39"
+    useDepAts = true
+}
+
+dependencies {
+    deobfProvided "mezz.jei:jei_1.12.2:4.13.1.222:api"
+    deobfProvided "net.industrial-craft:industrialcraft-2:2.8.104-ex112"
+    runtime "mezz.jei:jei_1.12.2:4.13.1.222"
+    runtime "net.industrial-craft:industrialcraft-2:2.8.104-ex112"
+    deobfCompile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.13.508"
+    deobfCompile "CraftTweaker2:CraftTweaker2-API:4.1.13.508"
+    deobfCompile "CraftTweaker2:ZenScript:4.1.13.508"
+
+}
+
+jar {
+    manifest {
+        attributes "Manifest-Version": "1.0"
+        attributes "FMLCorePlugin": "wormz.fatweaks.ASM.FATCore"
+        attributes "FMLCorePluginContainsFMLMod": "true"
+    }
+}
+    
+processResources {
+    // this will ensure that this task is redone when the versions change.
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    // replace stuff in mcmod.info, nothing else
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+                
+        // replace version and mcversion
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    // copy everything else except the mcmod.info
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

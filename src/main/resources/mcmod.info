@@ -1,0 +1,16 @@
+[
+{
+  "modid": "fatweaks",
+  "name": "FATweaks",
+  "description": "Tweaker mod for the modpack Fabrica Atlantica",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["wormz"],
+  "credits": "All hail the god of balance",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,8 @@
+item.fatweaks:breeder_uranium.name=Breeder fuel (Uranium)
+item.fatweaks:breeder_uranium_dual.name=Dual Breeder fuel (Uranium)
+item.fatweaks:breeder_uranium_quad.name=Quad Breeder fuel (Uranium)
+
+item.fatweaks:breeder_uranium_depleted.name=Spent Breeder fuel (Uranium)
+item.fatweaks:breeder_uranium_dual_depleted.name=Spent Dual Breeder fuel (Uranium)
+item.fatweaks:breeder_uranium_quad_depleted.name=Spent Quad Breeder fuel (Uranium)
+

@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "fatweaks:items/breeder_uranium_dual"
+    }
+}
