@@ -32,6 +32,10 @@ repositories {
         name = "jared"
         url = "http://maven.blamejared.com"
     }
+    maven {
+        name = 'CurseForge'
+        url = 'http://minecraft.curseforge.com/api/maven/'
+    }
 }
 
 minecraft {

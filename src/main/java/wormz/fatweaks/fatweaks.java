@@ -1,5 +1,8 @@
 package wormz.fatweaks;
 
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
@@ -15,6 +18,11 @@ public class fatweaks {
 
     @SidedProxy(clientSide = "wormz.fatweaks.proxy.ClientProxy", serverSide = "wormz.fatweaks.proxy.CommonProxy")
     public static CommonProxy proxy;
+
+    public static CreativeTabs creativeTabs = new CreativeTabs("FATweaks") {
+        @Override
+        public ItemStack createIcon() { return new ItemStack(ModBlocks.blocktest); }
+    };
 
     @Mod.Instance
     public static fatweaks instance;
