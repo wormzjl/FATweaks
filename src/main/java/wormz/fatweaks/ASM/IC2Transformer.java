@@ -226,6 +226,32 @@ public class IC2Transformer implements IClassTransformer {
             ClassWriter cw = new ClassWriter(0);
             cn.accept(cw);
             return cw.toByteArray();
+        } else if (name.equals("ic2.core.item.reactor.ItemReactorUranium")){
+            ClassReader cr = new ClassReader(bytes);
+            ClassNode cn = new ClassNode();
+            cr.accept(cn, 0);
+            for (MethodNode mn : cn.methods) {
+                if (mn.name.equals("func_77663_a")) {
+                    mn.instructions.clear();
+                    mn.visitInsn(Opcodes.RETURN);
+                }
+            }
+            ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
+            cn.accept(cw);
+            return cw.toByteArray();
+        } else if (name.equals("ic2.core.item.ItemHandlers$4")){
+            ClassReader cr = new ClassReader(bytes);
+            ClassNode cn = new ClassNode();
+            cr.accept(cn, 0);
+            for (MethodNode mn : cn.methods) {
+                if (mn.name.equals("onUpdate")) {
+                    mn.instructions.clear();
+                    mn.visitInsn(Opcodes.RETURN);
+                }
+            }
+            ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
+            cn.accept(cw);
+            return cw.toByteArray();
         } else {
             return bytes;
         }
