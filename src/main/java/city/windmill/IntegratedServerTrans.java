@@ -5,6 +5,7 @@ import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
+import wormz.fatweaks.ASM.FATCore;
 
 public class IntegratedServerTrans implements IClassTransformer {
     @Override
@@ -27,11 +28,11 @@ public class IntegratedServerTrans implements IClassTransformer {
                         codes.add(new VarInsnNode(Opcodes.ALOAD,0));
                         codes.add(new MethodInsnNode(Opcodes.INVOKESPECIAL,
                                 "net/minecraft/server/MinecraftServer",
-                                SmallFixCore.isDeobf ? "initiateShutdown" : "func_71263_m",
+                                FATCore.isDeobf ? "initiateShutdown" : "func_71263_m",
                                 "()V",
                                 false));
                         mn.instructions.insert(codes);
-                        SmallFixCore.LOGGER.info("Injected: " + transformedName);
+                        FATCore.LOGGER.info("Injected: " + transformedName);
                     }
                 }
             }
