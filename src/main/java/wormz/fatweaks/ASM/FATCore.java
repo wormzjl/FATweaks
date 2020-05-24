@@ -24,8 +24,8 @@ public class FATCore implements IFMLLoadingPlugin {
     }
     @Override
     public String[] getASMTransformerClass() {
-        return new String[]{IC2Transformer.class.getName(),
-                IETransformer.class.getName(),
+        return new String[]{
+                IC2Transformer.class.getName(),
                 RHTransformer.class.getName(),
                 IntegratedServerTrans.class.getName()
         };
