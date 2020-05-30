@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import java.util.Collection;
 
 @Pseudo
-@Mixin(targets = "com/chocohead/AdvMachines/te/TileEntityHeatingMachine")
+@Mixin(targets = "com/chocohead/AdvMachines/te/TileEntityHeatingMachine", remap = false)
 public class MixinAdvMachTEs {
     @Redirect(method = "<init>(BBLic2/api/recipe/IMachineRecipeManager;II)V", at = @At(value = "NEW", target = "Lic2/core/block/invslot/InvSlotProcessableGeneric;"))
     public InvSlotProcessableGeneric ctorProxy(
