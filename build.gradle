@@ -111,8 +111,8 @@ dependencies {
     //compile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.574:deobf"
     //compile "CraftTweaker2:CraftTweaker2-API:4.1.20.574"
     //compile "CraftTweaker2:ZenScript:4.1.20.574"
-    compile "curse.maven:advanced-machines:2667002"
-    compile "curse.maven:customoregen:2568549"
+    compileOnly "curse.maven:advanced-machines:2667002"
+    compileOnly "curse.maven:customoregen:2568549"
     //runtime "mezz.jei:jei_" + jei_version
     runtime "mcjty.theoneprobe:TheOneProbe-" + top_version
 }

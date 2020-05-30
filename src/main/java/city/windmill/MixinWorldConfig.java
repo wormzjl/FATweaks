@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @Pseudo
-@Mixin(WorldConfig.class)
+@Mixin(targets = "CustomOreGen/Server/WorldConfig")
 public class MixinWorldConfig {
     public MixinWorldConfig() throws IOException, ParserConfigurationException, SAXException {
     }
