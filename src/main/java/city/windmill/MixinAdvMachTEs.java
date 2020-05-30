@@ -9,11 +9,13 @@ import ic2.core.block.invslot.InvSlotProcessableGeneric;
 import ic2.core.block.invslot.InvSlotUpgrade;
 import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.Collection;
 
+@Pseudo
 @Mixin(TileEntityHeatingMachine.class)
 public class MixinAdvMachTEs {
     @Redirect(method = "<init>(BBLic2/api/recipe/IMachineRecipeManager;II)V", at = @At(value = "NEW", target = "Lic2/core/block/invslot/InvSlotProcessableGeneric;"))

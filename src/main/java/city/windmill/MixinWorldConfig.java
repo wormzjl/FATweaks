@@ -5,12 +5,14 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.*;
 import net.minecraft.world.storage.WorldInfo;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Pseudo;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.Map;
 
+@Pseudo
 @Mixin(WorldConfig.class)
 public class MixinWorldConfig {
     public MixinWorldConfig() throws IOException, ParserConfigurationException, SAXException {
