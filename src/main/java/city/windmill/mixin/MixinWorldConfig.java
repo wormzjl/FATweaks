@@ -1,4 +1,4 @@
-package city.windmill;
+package city.windmill.mixin;
 
 import CustomOreGen.Server.WorldConfig;
 import net.minecraft.world.World;

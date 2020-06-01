@@ -1,4 +1,4 @@
-package city.windmill;
+package city.windmill.mixin;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.passive.EntityWaterMob;

@@ -1,4 +1,4 @@
-package city.windmill;
+package city.windmill.mixin;
 
 import com.chocohead.AdvMachines.te.TileEntityHeatingMachine;
 import ic2.api.recipe.IMachineRecipeManager;

@@ -1,5 +1,5 @@
 {
-  "package": "city.windmill",
+  "package": "city.windmill.mixin",
   "required": false,
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
