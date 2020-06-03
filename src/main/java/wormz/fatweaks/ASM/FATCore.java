@@ -48,7 +48,7 @@ public class FATCore implements IFMLLoadingPlugin {
 
     @Override
     public String getModContainerClass() {
-        return FATCoreContainer.class.getName();
+        return null;
     }
 
     @Override

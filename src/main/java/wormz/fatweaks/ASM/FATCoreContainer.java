@@ -4,6 +4,7 @@ import com.google.common.eventbus.EventBus;
 import net.minecraftforge.fml.common.DummyModContainer;
 import net.minecraftforge.fml.common.LoadController;
 import net.minecraftforge.fml.common.ModMetadata;
+import wormz.fatweaks.fatweaks;
 
 import java.util.Arrays;
 
