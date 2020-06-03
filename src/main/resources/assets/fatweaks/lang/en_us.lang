@@ -6,3 +6,6 @@ item.fatweaks:breeder_uranium_depleted.name=Spent Breeder fuel (Uranium)
 item.fatweaks:breeder_uranium_dual_depleted.name=Spent Dual Breeder fuel (Uranium)
 item.fatweaks:breeder_uranium_quad_depleted.name=Spent Quad Breeder fuel (Uranium)
 
+dungeon.lostcitychest=LostCities Dungeon Chest
+dungeon.raildungeonchest=Railway Dungeon Chest
+

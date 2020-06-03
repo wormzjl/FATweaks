@@ -47,7 +47,7 @@ minecraft {
     //mappings channel: 'stable', version: '39-1.12'
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformer = file('src/accesstransformer.cfg')
 
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
@@ -98,6 +98,9 @@ repositories {
     maven {
         url "http://maven.tterrag.com/"
     }
+    maven {
+        url "https://dl.bintray.com/way2muchnoise/dev"
+    }
 }
 
 dependencies {
@@ -106,15 +109,12 @@ dependencies {
     shade('org.spongepowered:mixin:0.8') {
         transitive = false
     }
-    compile "mezz.jei:jei_" + jei_version + ":api"
     compile 'net.industrial-craft:industrialcraft-2:2.8.202-ex112'
-    //compile "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.574:deobf"
-    //compile "CraftTweaker2:CraftTweaker2-API:4.1.20.574"
-    //compile "CraftTweaker2:ZenScript:4.1.20.574"
     compileOnly "curse.maven:advanced-machines:2667002"
     compileOnly "curse.maven:customoregen:2568549"
-    //runtime "mezz.jei:jei_" + jei_version
-    runtime "mcjty.theoneprobe:TheOneProbe-" + top_version
+    compile "mezz.jei:jei_${mc_version}:${jei_version}"
+    compileOnly 'jeresources:JustEnoughResources-1.12.2:0.9.2.60'
+    runtimeOnly "mcjty.theoneprobe:TheOneProbe-${top_version}"
 }
 
 jar {
