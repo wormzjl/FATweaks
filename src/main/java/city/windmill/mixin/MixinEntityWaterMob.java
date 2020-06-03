@@ -15,6 +15,7 @@ public class MixinEntityWaterMob extends EntityLiving {
 
     /**
      * @author Windmill_City
+     * @reason Fix WaterMobs spawn in solid blocks
      */
     @Overwrite
     public boolean isNotColliding()

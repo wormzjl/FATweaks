@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import wormz.fatweaks.fatweaks;
 
 
 @Mod.EventBusSubscriber(Side.CLIENT)
@@ -19,14 +20,6 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    @Override
-    public void init(FMLInitializationEvent e) {
-        super.init(e);
-        if(Loader.isModLoaded("jeresources")){
-            JERPlugin.regChest();
-        }
     }
 
     @SubscribeEvent

@@ -3,6 +3,7 @@ package city.windmill;
 import jeresources.api.IJERAPI;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTable;
+import wormz.fatweaks.fatweaks;
 
 public class JERPlugin {
     @jeresources.api.JERPlugin
@@ -13,5 +14,6 @@ public class JERPlugin {
         jerapi.getDungeonRegistry().registerCategory("lostcities:chests/raildungeonchest", "dungeon.raildungeonchest");
         jerapi.getDungeonRegistry().registerChest("lostcities:chests/lostcitychest", new ResourceLocation("lostcities:chests/lostcitychest"));
         jerapi.getDungeonRegistry().registerChest("lostcities:chests/raildungeonchest", new ResourceLocation("lostcities:chests/raildungeonchest"));
+        fatweaks.logger.info("Registered Dungeon Information");
     }
 }
