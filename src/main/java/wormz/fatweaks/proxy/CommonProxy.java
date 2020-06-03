@@ -18,12 +18,6 @@ public class CommonProxy {
     }
 
     public void init(FMLInitializationEvent e) {
-        if(Loader.isModLoaded("jeresources")){
-            fatweaks.logger.info("Just Enough Resources Loaded!");
-            JERPlugin.regChest();
-        }
-        else
-            fatweaks.logger.info("Just Enough Resources Not Found!");
     }
 
     public void postInit(FMLPostInitializationEvent e) {

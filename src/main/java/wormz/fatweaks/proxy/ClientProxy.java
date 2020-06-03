@@ -22,6 +22,17 @@ public class ClientProxy extends CommonProxy {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    @Override
+    public void init(FMLInitializationEvent e) {
+        super.init(e);
+        if(Loader.isModLoaded("jeresources")){
+            fatweaks.logger.info("Just Enough Resources Loaded!");
+            JERPlugin.regChest();
+        }
+        else
+            fatweaks.logger.info("Just Enough Resources Not Found!");
+    }
+
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
     }
