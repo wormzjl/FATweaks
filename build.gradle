@@ -31,7 +31,7 @@ apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version = '1.1'
 group = 'wormz.fatweaks' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'fatweaks'
 
