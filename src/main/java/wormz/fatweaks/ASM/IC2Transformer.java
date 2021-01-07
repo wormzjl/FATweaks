@@ -65,7 +65,7 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n, new LdcInsnNode(75000));
+                        mn.instructions.set(n, new LdcInsnNode(50000));
                     }
                 }
             }
@@ -86,7 +86,7 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n, new LdcInsnNode(75000));
+                        mn.instructions.set(n, new LdcInsnNode(50000));
                     }
                 }
             }
@@ -107,7 +107,7 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n, new LdcInsnNode(600000));
+                        mn.instructions.set(n, new LdcInsnNode(250000));
                     }
                 }
             }
@@ -128,7 +128,7 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n, new LdcInsnNode(600000));
+                        mn.instructions.set(n, new LdcInsnNode(250000));
                     }
                 }
             }
@@ -149,7 +149,7 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n, new LdcInsnNode(5000000));
+                        mn.instructions.set(n, new LdcInsnNode(1250000));
                     }
                 }
             }
@@ -170,7 +170,7 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n, new LdcInsnNode(5000000));
+                        mn.instructions.set(n, new LdcInsnNode(1250000));
                     }
                 }
             }
@@ -212,14 +212,14 @@ public class IC2Transformer implements IClassTransformer {
                         n = n.getNext();
                     }
                     if (n != null) {
-                        mn.instructions.set(n1, new LdcInsnNode(4000.0D));
-                        mn.instructions.set(n2, new LdcInsnNode(25000.0D));
-                        mn.instructions.set(n3, new LdcInsnNode(150000.0D));
-                        mn.instructions.set(n4, new LdcInsnNode(1250000.0D));
+                        mn.instructions.set(n1, new LdcInsnNode(2500.0D));
+                        mn.instructions.set(n2, new LdcInsnNode(12500.0D));
+                        mn.instructions.set(n3, new LdcInsnNode(62500.0D));
+                        mn.instructions.set(n4, new LdcInsnNode(150000.0D));
                         mn.instructions.set(n5, new LdcInsnNode(10000.0D));
-                        mn.instructions.set(n6, new LdcInsnNode(75000.0D));
-                        mn.instructions.set(n7, new LdcInsnNode(600000.0D));
-                        mn.instructions.set(n, new LdcInsnNode(5000000.0D));
+                        mn.instructions.set(n6, new LdcInsnNode(50000.0D));
+                        mn.instructions.set(n7, new LdcInsnNode(250000.0D));
+                        mn.instructions.set(n, new LdcInsnNode(700000.0D));
                     }
                 }
             }

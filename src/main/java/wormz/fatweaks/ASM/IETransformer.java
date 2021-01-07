@@ -12,6 +12,7 @@ import static org.objectweb.asm.Opcodes.*;
 public class IETransformer implements IClassTransformer {
     @Override
     public byte[] transform(String name, String transformedName, byte[] bytes) {
+        /*
         if (name.equals("ferro2000.immersivetech.common.blocks.metal.tileentities.TileEntityAlternator")) {
             ClassReader cr = new ClassReader(bytes);
             ClassNode cn = new ClassNode();
@@ -235,5 +236,6 @@ public class IETransformer implements IClassTransformer {
         } else {
             return bytes;
         }
+        */
     }
 }
