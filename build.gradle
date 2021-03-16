@@ -20,7 +20,7 @@ apply plugin: "org.spongepowered.mixin"
 apply plugin: "idea"
 apply plugin: "maven-publish"
 
-version = "1.0"
+version = "1.2"
 group = "wormz.fatweaks"
 
 compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
