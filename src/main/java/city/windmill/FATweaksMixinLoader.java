@@ -4,7 +4,7 @@ import org.spongepowered.asm.mixin.Mixins;
 import zone.rong.mixinbooter.MixinLoader;
 
 @MixinLoader
-public class FATweaksMixinLoader {
+class FATweaksMixinLoader {
     {
         Mixins.addConfiguration("mixin.fatweaks.json");
     }
