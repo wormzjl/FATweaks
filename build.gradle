@@ -1,78 +1,51 @@
+import org.apache.commons.io.FileUtils
+import org.apache.commons.io.filefilter.FileFilterUtils
+import org.apache.commons.io.filefilter.TrueFileFilter
+
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
         mavenCentral()
         jcenter()
-        maven { url = 'http://repo.spongepowered.org/maven' }
+        maven { url = "https://files.minecraftforge.net/maven" }
+        maven { url = "https://repo.spongepowered.org/maven" }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+        classpath "net.minecraftforge.gradle:ForgeGradle:4.+"
+        classpath "org.spongepowered:mixingradle:0.7-SNAPSHOT"
     }
 }
 
-plugins {
-    id 'com.matthewprenger.cursegradle' version '1.4.0'
-    id "com.wynprice.cursemaven" version "2.1.4"
-}
+apply plugin: "net.minecraftforge.gradle"
+apply plugin: "org.spongepowered.mixin"
+apply plugin: "idea"
+apply plugin: "maven-publish"
 
-curseforge {
-    apiKey = api_token // This should really be in a gradle.properties file
-    project {
-        id = '0'
-        changelog = '' // A file can also be set using: changelog = file('changelog.txt')
-        releaseType = 'beta'
-    }
-}
+version = "1.0"
+group = "wormz.fatweaks"
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.spongepowered.mixin'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-apply plugin: 'idea'
-apply plugin: 'maven-publish'
-
-version = '1.0'
-group = 'wormz.fatweaks' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'fatweaks'
-
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
 
 minecraft {
-    // The mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   Snapshot are built nightly.
-    // stable_#            Stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'snapshot', version: '20171003-1.12'
-    //mappings channel: 'stable', version: '39-1.12'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    mappings channel: "snapshot", version: "20171003-1.12"
 
-    accessTransformer = file('src/accesstransformer.cfg')
-
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
-            workingDirectory project.file('run')
+            workingDirectory project.file("run")
 
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
 
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
+            property "forge.logging.console.level", "debug"
 
-            jvmArg '-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore'
+            jvmArg "-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore"
         }
 
         server {
 
-            // Recommended logging data for a userdev environment
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
 
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
+            property "forge.logging.console.level", "debug"
 
-            jvmArg '-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore'
+            jvmArg "-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore"
         }
     }
 }
@@ -101,45 +74,92 @@ repositories {
     maven {
         url "https://dl.bintray.com/way2muchnoise/dev"
     }
+    maven {
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+    minecraft "net.minecraftforge:forge:1.12.2-14.23.5.2854"
 
-    shade('org.spongepowered:mixin:0.8') {
-        transitive = false
-    }
-    compile 'net.industrial-craft:industrialcraft-2:2.8.202-ex112'
-    compileOnly "curse.maven:advanced-machines:2667002"
-    compileOnly "curse.maven:customoregen:2568549"
-    compile "mezz.jei:jei_${mc_version}:${jei_version}"
-    compileOnly 'jeresources:JustEnoughResources-1.12.2:0.9.2.60'
-    runtimeOnly "mcjty.theoneprobe:TheOneProbe-${top_version}"
+    implementation "curse.maven:mixinBooter-419286:3109196"
+    implementation "net.industrial-craft:industrialcraft-2:2.8.202-ex112"
+    implementation "curse.maven:industrialWires-251121:2664750"
+    implementation "curse.maven:advancedMachines-251205:2667002"
+    implementation fg.deobf("curse.maven:customOreGen-237130:2568549")
+    implementation "jeresources:JustEnoughResources-1.12.2:0.9.2.60"
+
+    runtimeOnly "blusunrize:ImmersiveEngineering:0.12-+"
+    runtimeOnly "mezz.jei:jei_1.12.2:4.15.0.293"
+    runtimeOnly "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17"
 }
 
 jar {
     manifest {
         attributes([
-                "Specification-Title": "SmallFix,FATweaker",
-                "Specification-Vendor": "Windmill_City,Wormzjl",
-                "Specification-Version": "1", // We are version 1 of ourselves
-                "Implementation-Title": project.name,
-                "Implementation-Version": "${version}",
-                "Implementation-Vendor" :"Windmill_City,Wormz",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "TweakClass"                 : "org.spongepowered.asm.launch.MixinTweaker",
+                "Specification-Title"        : "SmallFix,FATweaker",
+                "Specification-Vendor"       : "Windmill_City,Wormzjl",
+                "Specification-Version"      : "1", // We are version 1 of ourselves
+                "Implementation-Title"       : project.name,
+                "Implementation-Version"     : "${version}",
+                "Implementation-Vendor"      : "Windmill_City,Wormz",
+                "Implementation-Timestamp"   : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "FMLCorePlugin"              : "wormz.fatweaks.ASM.FATCore",
                 "FMLCorePluginContainsFMLMod": true,
-                "ForceLoadAsMod": true
+                "ForceLoadAsMod"             : true
         ])
     }
 }
 
-// Example configuration to allow publishing using the maven-publish task
-// This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar')
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-//publish.dependsOn('reobfJar')
+jar.finalizedBy("reobfJar")
+
+class MakeATsTask extends DefaultTask {
+    @Input
+    FileCollection runtimeLibraries
+    @OutputDirectories
+    File dirATs
+
+    String FILENAME_AT = "accesstransformer.cfg"
+
+    MakeATsTask() {
+        runtimeLibraries = project.configurations["runtimeClasspath"].filter {
+            !it.name.startsWith("forge")
+        }
+        dirATs = new File("$project.buildDir/generatedATs")
+    }
+
+    @TaskAction
+    def makeAT() {
+        project.delete(dirATs)//Clean first
+        runtimeLibraries.forEach {
+            project.zipTree(it).filter { content ->
+                content.name.endsWith("_at.cfg")
+            }.forEach { at ->
+                println("Found AccessTransFormer: ${at.name} in ${it.name}")
+                project.copy {
+                    from(at)
+                    into(project.file("$dirATs/${at.name.substring(0, at.name.lastIndexOf("."))}"))
+                    rename {
+                        FILENAME_AT
+                    }
+                }
+            }
+        }
+    }
+}
+
+task "transformAccessTransformer"(type: MakeATsTask) {
+    group = "access_transformer"
+
+    if (dirATs.exists())
+        minecraft.accessTransformers.addAll(FileUtils.listFiles(
+                dirATs,
+                FileFilterUtils.nameFileFilter(FILENAME_AT),
+                TrueFileFilter.INSTANCE))
+}
 
 publishing {
     publications {
