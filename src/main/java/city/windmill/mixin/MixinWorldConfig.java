@@ -1,5 +1,6 @@
 package city.windmill.mixin;
 
+import CustomOreGen.Server.WorldConfig;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.gen.ChunkProviderServer;
@@ -8,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(targets = "CustomOreGen/Server/WorldConfig", remap = false)
+@Mixin(value = WorldConfig.class, remap = false)
 class MixinWorldConfig {
     @Redirect(method = "populateWorldProperties",
             at = @At(

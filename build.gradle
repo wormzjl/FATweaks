@@ -92,6 +92,9 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:1.12.2-14.23.5.2854"
 
+    implementation "org.spongepowered:mixin:0.8.+"
+    annotationProcessor "org.spongepowered:mixin:0.8.+:processor"
+
     implementation "curse.maven:mixinBooter-419286:3109196"
     implementation "net.industrial-craft:industrialcraft-2:2.8.202-ex112"
     implementation "curse.maven:industrialWires-251121:2664750"
@@ -102,6 +105,10 @@ dependencies {
     runtimeOnly "blusunrize:ImmersiveEngineering:0.12-+"
     runtimeOnly "mezz.jei:jei_1.12.2:4.15.0.293"
     runtimeOnly "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17"
+}
+
+mixin {
+    add sourceSets.main, "main.refmap.json"
 }
 
 jar {
