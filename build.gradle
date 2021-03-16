@@ -26,33 +26,40 @@ group = "wormz.fatweaks"
 compileJava.sourceCompatibility = compileJava.targetCompatibility = "1.8"
 
 minecraft {
-    mappings channel: "snapshot", version: "20171003-1.12"
+    mappings channel: "stable", version: "39-1.12"
 
     runs {
         client {
             workingDirectory project.file("run")
 
-            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
-            property "forge.logging.console.level", "debug"
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
 
-            jvmArg "-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore"
+            mods {
+                fatweaks {
+                    source sourceSets.main
+                }
+            }
         }
 
         server {
 
-            property "forge.logging.markers", "SCAN,REGISTRIES,REGISTRYDUMP"
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
 
-            property "forge.logging.console.level", "debug"
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
 
-            jvmArg "-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore"
+            mods {
+                fatweaks {
+                    source sourceSets.main
+                }
+            }
         }
     }
-}
-
-configurations {
-    shade
-    compile.extendsFrom shade
 }
 
 repositories {
