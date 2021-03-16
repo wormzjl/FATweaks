@@ -7,15 +7,15 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(EntityWaterMob.class)
-public class MixinEntityWaterMob extends EntityLiving {
+class MixinEntityWaterMob extends EntityLiving {
 
     public MixinEntityWaterMob(World worldIn) {
         super(worldIn);
     }
 
     /**
-     * @author Windmill_City
      * @reason Fix WaterMobs spawn in solid blocks
+     * @author Windmill_City
      */
     @Overwrite
     public boolean isNotColliding()
