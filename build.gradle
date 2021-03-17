@@ -38,6 +38,8 @@ minecraft {
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
+            jvmArgs "-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore,zone.rong.mixinbooter.MixinBooterPlugin"
+
             mods {
                 fatweaks {
                     source sourceSets.main
@@ -52,6 +54,8 @@ minecraft {
 
             // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+
+            jvmArgs "-Dfml.coreMods.load=wormz.fatweaks.ASM.FATCore,zone.rong.mixinbooter.MixinBooterPlugin"
 
             mods {
                 fatweaks {
