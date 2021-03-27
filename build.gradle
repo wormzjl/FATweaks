@@ -105,6 +105,7 @@ dependencies {
     implementation "curse.maven:advancedMachines-251205:2667002"
     implementation fg.deobf("curse.maven:customOreGen-237130:2568549")
     implementation "jeresources:JustEnoughResources-1.12.2:0.9.2.60"
+    implementation "curse.maven:magneticraft-224808:2935936"
 
     runtimeOnly "blusunrize:ImmersiveEngineering:0.12-+"
     runtimeOnly "mezz.jei:jei_1.12.2:4.15.0.293"

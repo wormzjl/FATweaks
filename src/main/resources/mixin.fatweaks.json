@@ -9,6 +9,8 @@
     "MixinEntityWaterMob",
     "MixinIntegratedServer",
     "MixinWorldConfig",
-    "MixinTileEntityMechMB"
+    "MixinTileEntityMechMB",
+    "MixinMgCCombustion",
+    "MixinMgCBigCombustion"
   ]
 }
