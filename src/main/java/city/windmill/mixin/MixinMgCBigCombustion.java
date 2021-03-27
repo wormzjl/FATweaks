@@ -9,10 +9,10 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 class MixinMgCBigCombustion {
     @ModifyConstant(method = "<init>", constant = { @Constant(doubleValue = 10.0) })
     private double incresepower(final double original) {
-        return 40.0;
+        return 42.0;
     }
     @ModifyConstant(method = "burnSolidFuel", constant = { @Constant(doubleValue = 10.0) })
     private double incresepower2(final double original) {
-        return 40.0;
+        return 42.0;
     }
 }

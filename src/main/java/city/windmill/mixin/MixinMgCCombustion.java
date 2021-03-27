@@ -9,6 +9,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 class MixinMgCCombustion {
     @ModifyConstant(method = "update", constant = { @Constant(doubleValue = 10.0) })
     private double incresepower(final double original) {
-        return 40.0;
+        return 42.0;
     }
 }
