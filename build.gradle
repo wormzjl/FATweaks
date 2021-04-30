@@ -107,6 +107,8 @@ dependencies {
     implementation "jeresources:JustEnoughResources-1.12.2:0.9.2.60"
     implementation "curse.maven:magneticraft-224808:2935936"
 
+    runtimeOnly "curse.maven:forgelin-248453:2785465"
+    runtimeOnly "curse.maven:modelloader-277663:2744735"
     runtimeOnly "blusunrize:ImmersiveEngineering:0.12-+"
     runtimeOnly "mezz.jei:jei_1.12.2:4.15.0.293"
     runtimeOnly "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.28-17"

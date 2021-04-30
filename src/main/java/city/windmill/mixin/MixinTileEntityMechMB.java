@@ -10,7 +10,7 @@ class MixinTileEntityMechMB {
     @Redirect(
             method = "setMechanical",
             at = @At(
-                    value = "INVOKE_ASSIGN",
+                    value = "INVOKE",
                     target = "Ljava/lang/Math;pow(DD)D",
                     remap = false
             ))
