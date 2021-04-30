@@ -14,6 +14,7 @@ public class FATCore implements IFMLLoadingPlugin {
         return new String[]{
                 IC2Transformer.class.getName(),
                 RHTransformer.class.getName(),
+                IPTransformer.class.getName()
         };
     }
 
