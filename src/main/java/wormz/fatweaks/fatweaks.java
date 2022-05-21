@@ -13,7 +13,7 @@ public class fatweaks {
 
     public static final String MODID = "fatweaks";
     public static final String MODNAME = "FATweaks";
-    public static final String MODVERSION= "1.2";
+    public static final String MODVERSION= "1.3";
 
     @SidedProxy(clientSide = "wormz.fatweaks.proxy.ClientProxy", serverSide = "wormz.fatweaks.proxy.CommonProxy")
     public static CommonProxy proxy;
